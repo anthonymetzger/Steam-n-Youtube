@@ -1,0 +1,403 @@
+/* SteamAPI.css */
+
+/* Game Cards Container */
+.steam-cards-row {
+  padding: 10px 0;
+}
+
+/* Individual Game Card */
+.game-card {
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  border: none;
+  overflow: hidden;
+}
+
+.game-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Game Card Image */
+.game-card-img {
+  height: 100px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.game-card:hover .game-card-img {
+  transform: scale(1.05);
+}
+
+/* Game Card Body */
+.game-card-body {
+  padding: 0.5rem;
+}
+
+/* Game Title */
+.game-card-title {
+  font-size: 0.9rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  line-height: 1.2;
+}
+
+/* Discount Info */
+.game-discount-info {
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.game-discount-percent {
+  font-size: 0.85rem;
+  margin-bottom: 0;
+  font-weight: bold;
+}
+
+/* Background Colors for Discounted Games */
+.game-card-discounted {
+  background-color: #d4edda;
+  border-left: 4px solid #28a745;
+}
+
+.game-card-regular {
+  background-color: white;
+}
+
+/* Ensure full width for carousel items */
+.w-100 {
+  width: 100% !important;
+}
+
+.steam-cards-row.justify-content-center {
+  justify-content: center;
+}
+
+/* YouTube Bottom Panel - Slides up from bottom */
+/* YouTube Bottom Panel - Slides up from bottom */
+.youtube-bottom-panel {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45vh;
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 1050;
+  padding: 1.5rem 2rem;
+  animation: slideUp 0.4s ease-out;
+  backdrop-filter: blur(10px);
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(100%);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* YouTube Panel Header */
+.youtube-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.youtube-panel-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #212529;
+  margin: 0;
+}
+
+/* Close Button */
+.youtube-close-btn {
+  z-index: 10;
+}
+
+/* YouTube Carousel Container */
+.youtube-carousel-container {
+  height: calc(100% - 70px);
+  position: relative;
+}
+
+.youtube-carousel-inner {
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.youtube-carousel-item {
+  height: 100%;
+  display: none;
+  position: relative;
+  transition: transform 0.6s ease-in-out;
+  float: left;
+  width: 100%;
+  margin-right: -100%;
+  backface-visibility: hidden;
+}
+
+.youtube-carousel-item.active {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+
+.youtube-carousel-item-next,
+.youtube-carousel-item-prev {
+  display: flex;
+}
+
+.youtube-carousel-item-next:not(.youtube-carousel-item-start),
+.youtube-carousel-item.active.carousel-item-end {
+  transform: translateX(100%);
+}
+
+.youtube-carousel-item-prev:not(.youtube-carousel-item-end),
+.youtube-carousel-item.active.carousel-item-start {
+  transform: translateX(-100%);
+}
+
+.youtube-carousel-item-next.youtube-carousel-item-start,
+.youtube-carousel-item-prev.youtube-carousel-item-end {
+  transform: translateX(0);
+}
+
+/* Grid Layout for 3 Videos */
+.youtube-videos-grid {
+  display: flex;
+  gap: 1.5rem;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  max-width: 1400px;
+  padding: 0 4rem;
+}
+
+/* Individual Video Card */
+.youtube-video-card {
+  flex: 1;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.youtube-video-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.youtube-card-thumbnail {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.youtube-card-body {
+  padding: 1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.youtube-card-title {
+  font-size: 0.95rem;
+  font-weight: bold;
+  color: #212529;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+ 
+  -webkit-box-orient: vertical;
+}
+
+.youtube-card-channel {
+  color: #6c757d;
+  margin-bottom: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.youtube-card-date {
+  color: #6c757d;
+  font-size: 0.8rem;
+  margin-bottom: 0;
+  margin-top: auto;
+}
+
+/* YouTube Carousel Controls */
+.youtube-carousel-prev,
+.youtube-carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.6);
+  border-radius: 50%;
+  opacity: 1;
+  transition: all 0.3s ease;
+  z-index: 10;
+  border: none;
+}
+
+.youtube-carousel-prev {
+  left: 20px;
+}
+
+.youtube-carousel-next {
+  right: 20px;
+}
+
+.youtube-carousel-prev:hover,
+.youtube-carousel-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.youtube-carousel-prev .carousel-control-prev-icon,
+.youtube-carousel-next .carousel-control-next-icon {
+  width: 20px;
+  height: 20px;
+}
+
+/* YouTube Carousel Indicators */
+.youtube-indicators {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  z-index: 10;
+}
+
+.youtube-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #6c757d;
+  border: none;
+  opacity: 0.5;
+  padding: 0;
+  margin: 0;
+  transition: all 0.3s ease;
+}
+
+.youtube-indicators button.active {
+  opacity: 1;
+  background-color: #212529;
+  transform: scale(1.2);
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .youtube-videos-grid {
+    padding: 0 3rem;
+    gap: 1rem;
+  }
+  
+  .youtube-card-thumbnail {
+    height: 160px;
+  }
+}
+
+@media (max-width: 992px) {
+  .youtube-bottom-panel {
+    height: 50vh;
+  }
+  
+  .youtube-videos-grid {
+    gap: 1rem;
+    padding: 0 3rem;
+  }
+  
+  .youtube-card-thumbnail {
+    height: 140px;
+  }
+  
+  .youtube-card-title {
+    font-size: 0.9rem;
+  }
+  
+  .youtube-carousel-prev {
+    left: 10px;
+  }
+  
+  .youtube-carousel-next {
+    right: 10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .youtube-bottom-panel {
+    height: 55vh;
+    padding: 1rem;
+  }
+  
+  .youtube-videos-grid {
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0 2rem;
+  }
+  
+  .youtube-video-card {
+    max-width: 100%;
+  }
+  
+  .youtube-card-thumbnail {
+    height: 180px;
+  }
+  
+  .youtube-panel-title {
+    font-size: 1.2rem;
+  }
+  
+  .youtube-carousel-prev,
+  .youtube-carousel-next {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .youtube-carousel-prev {
+    left: 5px;
+  }
+  
+  .youtube-carousel-next {
+    right: 5px;
+  }
+}
+
+@media (max-width: 576px) {
+  .youtube-bottom-panel {
+    height: 65vh;
+  }
+  
+  .youtube-videos-grid {
+    padding: 0 1rem;
+  }
+  
+  .youtube-card-thumbnail {
+    height: 150px;
+  }
+}
